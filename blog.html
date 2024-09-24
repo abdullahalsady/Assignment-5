@@ -1,73 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    
+    <!-- Font and CSS links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Tailwind CSS script -->
     <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-</head>
-<body>
-    <!-- header part -->
-    <div class="bg-[#faf6ee] py-4 px-8 flex justify-between items-center">
-        <!-- Blog Button -->
-        <button class="flex items-center space-x-2 bg-[#a6e26b] text-black font-bold py-2 px-4 rounded-md  hover:bg-green-400 transition ease-in-out">
-          <a href="index.html">Home</a>
-        </button>
+  <body style="font-family: Lexend !important;">
+    <!-- Header section -->
+    <div id="header-section" class="bg-[#faf6ee] bg-opacity-80 py-4 px-4 flex justify-between items-center sticky top-0 z-50 h-20">
+      <!-- Home button -->
+      <button class="flex items-center space-x-2 bg-[#a6e26b] text-black font-bold py-2 px-3 rounded-md hover:bg-green-400 transition ease-in-out">
+        <a href="index.html">HOME</a>
+      </button>
       
-        <!-- Donate Button -->
-        <button class="flex items-center space-x-2  text-black font-bold py-2 px-6 hover:bg-gray-100 transition ease-in-out">
-          <!-- Icon (Replace with actual image or SVG) -->
-          <span><img src="./assets/logo.svg" alt=""></span>
-          <span>Donate Bangladesh</span>
-        </button>
+      <!-- Logo and title -->
+      <button class="flex items-center space-x-2 text-black font-bold py-2 px-4 hover:bg-gray-100 transition ease-in-out">
+        <span>
+          <img src="./assets/logo.svg" alt="Logo" class="h-8 sm:h-6"> 
+        </span>
+        <span class="hidden md:inline uppercase font-extrabold">Donate Bangladesh</span>
+      </button>
       
-        <!-- Amount Button -->
-        <button class="flex items-center space-x-2 text-black font-bold py-2 px-4">
-          <!-- Icon (Replace with actual image or SVG) -->
-          <span>🪙</span>
-          <span>5500 BDT</span>
-        </button>
-      </div>
+      <!-- Amount button -->
+      <button class="flex items-center space-x-2 text-black font-bold py-2 px-3">
+        <span>🪙</span>
+        <span id="my-amount">5500</span>
+        <span>BDT</span>
+      </button>
+    </div>
 
+    <!-- Main content - FAQ section -->
+    <h1 class="mx-7 md:mx-32 text-3xl mt-4 font-extrabold">Important FAQ</h1>
 
-
-
-
-    <div class="join join-vertical w-full">
+    <div class="mx-auto w-full flex items-center justify-center">
+      <div class="join join-vertical w-10/12 mx-auto my-6">
+        
+        <!-- FAQ 1 - DOM definition -->
         <div class="collapse collapse-arrow join-item border-base-300 border">
           <input type="radio" name="my-accordion-4" checked="checked" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
+          <div class="collapse-title text-xl font-medium">What is the Document Object Model (DOM)?</div>
+          <div class="collapse-content h-full">
+            <p>
+              The <strong class="font-bold bg-gray-200 rounded-md px-1">Document Object Model (DOM)</strong> is a programming interface for web documents, typically HTML or XML, that defines the structure, style, and content of a webpage. It represents the document as a tree-like structure where every part of the document (elements, attributes, text, etc.) is treated as an object that can be accessed and manipulated by programming languages like <strong class="font-bold bg-gray-200 rounded-md px-1">JavaScript</strong>.
+            </p>
           </div>
         </div>
+
+        <!-- FAQ 2 - Selecting elements from DOM -->
         <div class="collapse collapse-arrow join-item border-base-300 border">
           <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
+          <div class="collapse-title text-xl font-medium">How do you select an element from the DOM?</div>
+          <div class="collapse-content h-full">
+            <p>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">getElementById</strong>: Selects an element by its ID.<br>
+              Example: <strong class="font-bold bg-gray-200 rounded-md px-1">const element = document.getElementById('elementId');</strong><br>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">getElementsByClassName</strong>: Selects all elements with a specific class name (returns an HTMLCollection).<br>
+              Example: <strong class="font-bold bg-gray-200 rounded-md px-1">const elements = document.getElementsByClassName('className');</strong><br>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">getElementsByTagName</strong>: Selects all elements with a specific tag name (returns an HTMLCollection).<br>
+              Example: <strong class="font-bold bg-gray-200 rounded-md px-1">const elements = document.getElementsByTagName('tagName');</strong><br>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">querySelector</strong>: Selects the first element that matches a CSS selector.<br>
+              Example: <strong class="font-bold bg-gray-200 rounded-md px-1">const element = document.querySelector('.className');</strong> (by class)<br>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">querySelectorAll</strong>: Selects all elements that match a CSS selector (returns a NodeList).<br>
+              Example: <strong class="font-bold bg-gray-200 rounded-md px-1">const elements = document.querySelectorAll('.className');</strong> (by class)
+            </p>
           </div>
         </div>
+
+        <!-- FAQ 3 - Event delegation -->
         <div class="collapse collapse-arrow join-item border-base-300 border">
           <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-          <div class="collapse-content">
-            <p>hello</p>
+          <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM and Why is it useful?</div>
+          <div class="collapse-content h-full">
+            <p>
+              <strong class="font-bold bg-gray-200 rounded-md px-1">Event delegation</strong> is a technique in <strong class="font-bold bg-gray-200 rounded-md px-1">JavaScript</strong> where a single event listener is added to a parent element instead of adding individual event listeners to multiple child elements. This is done by taking advantage of <strong class="font-bold bg-gray-200 rounded-md px-1">event bubbling</strong>, where events propagate up the <strong class="font-bold bg-gray-200 rounded-md px-1">DOM tree</strong> from the target element to its ancestors.
+            </p>
           </div>
         </div>
+
+        <!-- FAQ 4 - Manipulating attributes and styles -->
         <div class="collapse collapse-arrow join-item border-base-300 border">
-            <input type="radio" name="my-accordion-4" />
-            <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
-            <div class="collapse-content">
-              <p>hello</p>
-            </div>
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium">How do you manipulate an element's attribute and styles using the DOM?</div>
+          <div class="collapse-content h-full">
+            <p>
+              To manipulate an element's attributes and styles using the DOM in JavaScript, you can use methods like 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">getAttribute</strong>, 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">setAttribute</strong>, and 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">removeAttribute</strong> to manage attributes. For direct access, you can modify common attributes as properties (e.g., 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">element.id</strong>). To change styles, use the 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">style</strong> property to set inline styles, such as 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">element.style.color = 'red'</strong>. You can also set multiple styles at once using 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">Object.assign</strong>. To remove a style, simply set the property to an empty string (e.g., 
+              <strong class="font-bold bg-gray-200 rounded-md px-1">element.style.color = ''</strong>).
+            </p>
           </div>
+        </div>
+
       </div>
+    </div>
 
-      <!-- footer -->
-      <footer class="bg-[#faf6ee] h-24 mt-20 fixed inset-x-0 bottom-0"></footer>
-
-</body>
+    <!-- Footer section -->
+    <footer class="bg-[#faf6ee] h-24 mt-28 inset-x-0 bottom-0"></footer>
+  </body>
 </html>

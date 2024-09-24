@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="header-section" class="bg-[#faf6ee] bg-opacity-80 py-4 px-8 flex justify-between items-center sticky top-0 z-50 h-20">
+    <!-- Blog Button -->
+    <button class="flex items-center space-x-2 bg-[#a6e26b] text-black font-bold py-2 px-4 rounded-md hover:bg-green-400 transition ease-in-out">
+        <a href="blog.html">Blog</a>
+    </button>
+
+    <!-- Donate Button -->
+    <button class="flex items-center space-x-2 text-black font-bold py-2 px-6 hover:bg-gray-100 transition ease-in-out">
+        <!-- Icon -->
+        <span><img src="./assets/logo.svg" alt=""></span>
+        <span>Donate Bangladesh</span>
+    </button>
+
+    <!-- Amount Button -->
+    <button class="flex items-center space-x-2 text-black font-bold py-2 px-4">
+        <span>🪙</span>
+        <span id="my-amount">5500</span>
+        <span>BDT</span>
+    </button>
+</div>
+
+
+
+  <div id="history-container" class="h-20">
+
+  </div>
+
+
+
+      <!-- Donation and History Buttons Section -->
+    <div class="flex justify-center space-x-4 mt-8">
+      <!-- Donation Button -->
+      <button id="donation-btn" class=" bg-white text-black border border-gray-300 font-bold py-2 px-6 rounded-md hover:bg-gray-100 transition ease-in-out" onclick="setButtonStates()">
+          <a href="index.html">Donation</a>
+      </button>
+  
+      <!-- History Button -->
+      <button id="history-btn" class=" bg-[#a6e26b] text-white font-bold py-2 px-6 rounded-md" onclick="setButtonStates()">
+          <a href="history.html">History</a>
+      </button>
+  </div>
+
+
+    <!-- footer -->
+    <footer class="bg-[#faf6ee] h-24 mt-20 w-full"></footer>
+
+
+    
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
